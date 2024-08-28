@@ -32,4 +32,12 @@ public class RecruiterProfile {
   public RecruiterProfile(Users user) {
     this.userId = user;
   }
+
+  @Transient // since we are not persisting this in the DB
+  public String getPhotosImagePath() {
+    if (profilePhoto == null) {
+      return null;
+    }
+    return "/photos/recruiter/" + userAccountId + "/" + profilePhoto;
+  }
 }
