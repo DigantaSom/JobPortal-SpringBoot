@@ -1,7 +1,12 @@
 package com.digantasom.jobportal.service;
 
 import com.digantasom.jobportal.entity.JobPostActivity;
+import com.digantasom.jobportal.entity.RecruiterJobDTO;
+
+import java.util.List;
 
 public interface JobPostActivityService {
-  public JobPostActivity addNew(JobPostActivity jobPostActivity);
+  JobPostActivity addNew(JobPostActivity jobPostActivity);
+  List<RecruiterJobDTO> getRecruiterJobs(int recruiter);
+  JobPostActivity getOne(int id);
 }
