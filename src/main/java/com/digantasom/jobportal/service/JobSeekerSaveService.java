@@ -9,4 +9,5 @@ import java.util.List;
 public interface JobSeekerSaveService {
   List<JobSeekerSave> getCandidatesJobs(JobSeekerProfile userAccountId);
   List<JobSeekerSave> getJobCandidates(JobPostActivity job);
+  void addNew(JobSeekerSave jobSeekerSave);
 }

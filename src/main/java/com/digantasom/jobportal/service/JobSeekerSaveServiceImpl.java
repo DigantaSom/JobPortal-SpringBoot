@@ -17,11 +17,18 @@ public class JobSeekerSaveServiceImpl implements JobSeekerSaveService {
     this.jobSeekerSaveRepository = jobSeekerSaveRepository;
   }
 
+  @Override
   public List<JobSeekerSave> getCandidatesJobs(JobSeekerProfile userAccountId) {
     return jobSeekerSaveRepository.findByUserId(userAccountId);
   }
 
+  @Override
   public List<JobSeekerSave> getJobCandidates(JobPostActivity job) {
     return jobSeekerSaveRepository.findByJob(job);
+  }
+
+  @Override
+  public void addNew(JobSeekerSave jobSeekerSave) {
+    jobSeekerSaveRepository.save(jobSeekerSave);
   }
 }
